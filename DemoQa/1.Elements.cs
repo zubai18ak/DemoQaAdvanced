@@ -291,67 +291,7 @@ namespace DemoQa
 
     }
     
-    public partial class Widgets
-    {
-        public void Accordian(IWebDriver Driver, IJavaScriptExecutor js)
-        {
-            js.ExecuteScript("window.scrollBy(0,600)");
-            Thread.Sleep(200);
-            Driver.FindElement(By.XPath("//div[text()='Widgets']")).Click();
-            Thread.Sleep(200);
-
-            Thread.Sleep(200);
-            Driver.FindElement(By.XPath("//span[text()='Accordian']")).Click();
-            Thread.Sleep(200);
-            Driver.FindElement(By.XPath("//div[text()='What is Lorem Ipsum?']")).Click();
-            Thread.Sleep(2000);
-            js.ExecuteScript("window.scrollBy(0,200)");
-            Driver.FindElement(By.XPath("//div[text()='Where does it come from?']")).Click();
-            Thread.Sleep(2000);
-            Driver.FindElement(By.XPath("//div[text()='Where does it come from?']")).Click();
-            Thread.Sleep(2000);
-            Driver.FindElement(By.XPath("//div[text()='Why do we use it?']")).Click();
-            Thread.Sleep(2000);
-            Driver.FindElement(By.XPath("//div[text()='Why do we use it?']")).Click();
-            Thread.Sleep(2000);
-
-        } 
-        
-        public void AutoComplete(IWebDriver Driver, IJavaScriptExecutor js)
-        {
-
-        }
-        public void DatePicker(IWebDriver Driver, IJavaScriptExecutor js)
-        {
-
-        }
-    }
-
-    public partial class Interactions
-    {
-        public void Sortable(IWebDriver Driver, IJavaScriptExecutor js, Actions act)
-        {
-            js.ExecuteScript("window.scrollBy(0,600)");
-            Thread.Sleep(200);
-            Driver.FindElement(By.XPath("//span[text()='Interactions']")).Click();
-            Thread.Sleep(200);
-            Driver.FindElement(By.XPath("//span[text()='Sortable']")).Click();
-            Thread.Sleep(200);
-            Driver.FindElement(By.XPath("//a[@id='demo-tab-list']")).Click();
-            Thread.Sleep(200);
-            //Driver.FindElement(By.XPath("//div[text()='Two']"));
-            var drag = Driver.FindElement(By.XPath("//div[text()='One']"));
-            var drop = Driver.FindElement(By.XPath("//div[text()='Two']"));
-            act.ClickAndHold(drag).Build().Perform();
-            Thread.Sleep(200);
-            act.DragAndDrop(drag, drop).Build().Perform();
-            Thread.Sleep(200);
-
-            act.MoveToElement(drop).Release().Build();
-            Thread.Sleep(200);
-        }
-    }
-
-
+    
+   
 
 }
