@@ -43,16 +43,12 @@ namespace DemoQa
             Thread.Sleep(2000);
             ButtonElement.Click();
             Task.Delay(3000).Wait();
-
-            Console.WriteLine("Testing Close");
-            Driver.Close();
-            Driver.Quit();
         }
 
         public void CheckBox(IWebDriver Driver,IJavaScriptExecutor js)
         {
             Thread.Sleep(200);
-            js.ExecuteScript("window.scrollBy(0,200)");
+            js.ExecuteScript("window.scrollBy(0,0)");
             Thread.Sleep(200);
             Driver.FindElement(By.XPath("//span[text()='Check Box']")).Click();
             Thread.Sleep(2000);
@@ -241,18 +237,19 @@ namespace DemoQa
 
         public void BrokenLinks(IWebDriver Driver, IJavaScriptExecutor js)
         {
+            
             js.ExecuteScript("window.scrollBy(0,500)");
             Thread.Sleep(200);
-            Driver.FindElement(By.XPath("//span[text()='Links']")).Click();
+            Driver.FindElement(By.XPath("//span[text()='Broken Links - Images']")).Click();
 
-            Driver.FindElement(By.XPath("//p[text()='Valid Link']")).Click();
+            Driver.FindElement(By.XPath("//a[text()='Click Here for Valid Link']")).Click();
             Thread.Sleep(2000);
-            Driver.SwitchTo().Window(Driver.WindowHandles[0]);
+            Driver.Navigate().Back();
             Thread.Sleep(2000);
 
-            Driver.FindElement(By.XPath("//p[text()='Broken Link']")).Click();
+            Driver.FindElement(By.XPath("//a[text()='Click Here for Broken Link']")).Click();
             Thread.Sleep(2000);
-            Driver.SwitchTo().Window(Driver.WindowHandles[0]);
+            Driver.Navigate().Back();
             Thread.Sleep(2000);
 
         }

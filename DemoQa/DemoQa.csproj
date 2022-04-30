@@ -52,6 +52,8 @@
     <Compile Include="1.Elements.cs" />
     <Compile Include="2.Forms.cs" />
     <Compile Include="3.AlertWindow.cs" />
+    <Compile Include="4.Widgets.cs" />
+    <Compile Include="5.Interactions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

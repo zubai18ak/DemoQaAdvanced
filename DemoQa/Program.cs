@@ -37,22 +37,24 @@ namespace DemoQa
             AlertsFrameWindow Alerts = new AlertsFrameWindow();
             AlertsFrameWindow TimerAlert = new AlertsFrameWindow();
             AlertsFrameWindow Modals = new AlertsFrameWindow();
-           
-            TextBox.TextBox(Driver,js);
-            CheckBox.CheckBox(Driver,js);
-            RadioButton.RadioButton(Driver,js);
-            WebTables.WebTables(Driver,js);
-            Buttons.Buttons(Driver,js,act);
-            BrokenLinks.BrokenLinks(Driver,js);
-            Link.Link(Driver,js);
-            UploadAndDownload.UploadAndDownload(Driver,js);
-            DynamicProperties.DynamicProperties(Driver,js);
-            Form.Form(Driver,js);
+
+            TextBox.TextBox(Driver, js);
+            CheckBox.CheckBox(Driver, js);
+            RadioButton.RadioButton(Driver, js);
+            WebTables.WebTables(Driver, js);
+            Buttons.Buttons(Driver, js, act);
+            Link.Link(Driver, js);
+            BrokenLinks.BrokenLinks(Driver, js);
+            UploadAndDownload.UploadAndDownload(Driver, js);
+            DynamicProperties.DynamicProperties(Driver, js);
+            Form.Form(Driver, js);
             Alerts.BrowserWindow(Driver, js, act);
             Alerts.Alerts(Driver, js, act);
             Alerts.TimerAlert(Driver, js, act);
             Alerts.Modals(Driver, js, act);
 
+
+            Console.WriteLine("Testing Close");
             Thread.Sleep(200);
             Driver.Close();
             Thread.Sleep(2000);
